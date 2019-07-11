@@ -1,0 +1,18 @@
+重要的BeanFactoryPostProcessor:
+	1 普通的BeanFactoryPostProcessor------->void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException;
+	2 关于注册的:BeanDefinitionRegistryPostProcessor---void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException 
+	     ConfigurationClassPostProcessor----springboot实现的关键类：
+	     	检查容器中的类是否有如下注解：
+	     		Configuration.class.getName()
+	     		
+	     		Component.class.getName();
+				ComponentScan.class.getName();
+				Import.class.getName();
+				ImportResource.class.getName();
+				
+	     		Bean.class.getName()
+	     		
+	     		
+	     		----processDeferredImportSelectors();此时会处理AutoConfigurationImportSelector--->selectImports--->getCandidateConfigurations()
+	   
+	     											SpringFactoriesLoader.loadFactoryNames()加载META/INF下面的META-INF/spring.factories文件	

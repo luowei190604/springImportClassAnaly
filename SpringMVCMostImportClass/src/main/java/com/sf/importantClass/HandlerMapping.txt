@@ -1,0 +1,15 @@
+HandlerMapping---interface
+   AbstractHandlerMapping
+      AbstractHandlerMethodMapping
+        RequestMappingHandlerMapping
+           
+           
+           
+在mvc的初始化过程中，如果用户没有设置:detectAllHandlerMappings参数，
+就会加载默认的配置:Dispatcher.properties文件下的HandlerMapping
+ 重要的:RequestMappingHandlerMapping类图如上
+ 
+在前端通过request调用时,通过request去寻找handlerMapping(这里拿到的是MethodHandler对象)，会组装成一个HandlerExecutionChain(调用链)
+会组装MethodHandler，并且会加上2个拦截器(3个方法,前置，后置，事件通知)
+
+

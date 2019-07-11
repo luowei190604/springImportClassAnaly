@@ -1,0 +1,9 @@
+ClassPathScanningCandidateComponentProvider
+   ClassPathBeanDefinitionScanner
+   	 doScan();
+   	  
+
+   	  用来扫描指定包下的特定类
+   	 在父类中有2个linkedList---
+   	 includeFilters 在这个默认的过滤器中，有3种注解可以被扫描到   javax.annotation.ManagedBean javax.inject.Named Component.class
+   	 excludeFilters可以对扫描的条件做限制

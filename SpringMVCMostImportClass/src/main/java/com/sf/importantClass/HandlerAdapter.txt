@@ -1,0 +1,22 @@
+HandlerAdapter
+  AbstractHandlerMethodAdapter
+    RequestMappingHandlerAdapter
+    
+    
+HandlerMapping---->HandlerAdapter
+   在HandlerMapping--->HandlerExecutionChain时，会把MethodHandler组装成HandlerExecutionChain
+   (添加拦截器HandlerInterceptor)
+   判断容器中的HandlerAdapter是否支持传入的HandlerExecutiionChain  ha.support(chain)
+   
+
+   
+handlerAdapter.handl
+     (RequestMappingHandlerAdapter)
+    ----->handleInternal();
+    ServletInvocableHandlerMethod
+    ----->invokeForRequest();反射调用
+    
+    returnValueHandlers.handlReturnValue
+       RequestResponseBodyMethodProcessor.handleReturnValue
+           寻找MessageConverters通过序列化把数据write出去
+         
