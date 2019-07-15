@@ -1,0 +1,11 @@
+1 创建定时器  stopWatch.start()
+2 初始化错误报告器 exeptionResportors
+3 从配置文件中获得事件发布器  SpringApplicationRunListeners
+4 准备上下文环境 prepareEnvironment(读取配置文件信息,发布环境准备事件)
+5 打印banner(springboot启动图标)
+6 根据类型推断，初始化应用上下文
+7 准备应用上下文(设置上下文环境,发布准备事件，加载启动类，发布准备完成事件)、
+8 刷新应用上下文
+9 停止计时器
+10 发布应用上下文刷新完成事件
+11 调用listener和CommandLineRunner初始化函数
